@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbConnect = () => {
 // connect DB
-    mongoose.connect('mongodb+srv://<username>:<password>@cluster0.ujgnn.mongodb.net/<project>', {
+    mongoose.connect(process.env.MONGODB_URL, {
         useFindAndModify: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
