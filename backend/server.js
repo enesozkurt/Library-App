@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const usersRoute = require('./routes/usersRoute');
+const bookRoute = require('./routes/bookRoutes');
 const error = require('./middlewares/errorMiddlewareHandler');
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/users', usersRoute);
+app.use('/api/books', bookRoute);
 
 
 // Error middleware
